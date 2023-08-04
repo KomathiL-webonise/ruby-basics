@@ -15,24 +15,12 @@ def sum_of_cubes(a, b)
 ###################  2.Given an Array, return the elements that are present exactly once in the array. You need to write a method called non_duplicated_values to accomplish this task. Example: Given [1,2,2,3,3,4,5], the method should return [1,4,5]
 
 def non_duplicated_values(arr)
-    counts = Hash.new(0)
-  
-    arr.each do |element|
-      counts[element] += 1
-    end
-  
-    non_duplicated = []
-    counts.each do |element, count|
-      non_duplicated << element if count == 1
-    end
-  
-    non_duplicated
-  end
-  
- 
-  arr = [1, 2, 2, 3, 3, 4, 5, 6, 6]
-  result = non_duplicated_values(arr)
-  puts result.inspect 
+  arr.select { |value| arr.count(value) == 1 }
+end
+
+arr = [1, 2, 2, 3, 3, 4, 5, 6, 6]
+result = non_duplicated_values(arr)
+puts result.inspect
 
   ###################  3.Given a sentence, return true if the sentence is a palindrome. You are supposed to write a method palindrome? to accomplish this task. 
 # Note: Ignore whitespace and cases of characters. Example: Given ""Never odd or even"" the method should return true.
@@ -148,17 +136,13 @@ def is_prime?(number)
   ###################################  8.Swap the given values(without the third variable)
 
   def swap_values(a, b)
-    a = a + b
-    b = a - b
-    a = a - b
-  
-    return a, b
+    return b, a
   end
   
-  x = 5
-  y = 10
+  x = "Ruby"
+  y = "Rails"
   x, y = swap_values(x, y)
-  puts "x: #{x}, y: #{y}" 
+  puts "x: #{x}, y: #{y}"
 
   ######################################  9.Program to Randomly Select an Element From the Array
 
