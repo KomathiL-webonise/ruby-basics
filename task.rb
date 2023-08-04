@@ -198,4 +198,42 @@ my_hash = keys.zip(values).to_h
 puts "Resulting hash:"
 puts my_hash
 
+str1 = "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+str2 = "RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used."
+
+# Find occurrence of 'RUBY' in str1.
+puts "Occurrences of 'RUBY' in str1: #{str1.scan("RUBY").count}"
+
+#  Find the position where 'RUBY' occurs in str1.
+puts "Position of 'RUBY' in str1: #{str1.index("RUBY")}"
+
+#  Create an array of words in str1 & print them.
+puts "Words in array from str1:"
+str1.split.each { |word| puts word }
+
+#  Capitalize str1.
+puts "Capitalized str1:"
+puts str1.capitalize
+
+# Combine str1 & str2.
+combined_strings = "#{str1} #{str2}"
+puts "Combined strings:"
+puts combined_strings
+
+# Cut str1 into 4 parts & print them.
+puts "String parts from str1:"
+str1.scan(/.{1,#{str1.length / 4}}/).each { |part| puts part }
+
+# Divide str1 by occurrences of '.'. Combine in reverse word sequence.
+puts "Reversed string with '.' division from str1:"
+puts str1.split('.').reverse.join('.')
+
+#  Remove HTML characters from str1.
+puts "Cleaned str1:"
+puts str1.gsub(/<\/?[^>]*>/, "")
+
+
+#  Find the length of str1 & str2.
+puts "Length of str1: #{str1.length}"
+puts "Length of str2: #{str2.length}"
   
