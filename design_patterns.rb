@@ -5,7 +5,7 @@ class Logger
   
     def initialize
       raise 'Singleton class, use Logger.instance instead.' if @@instance
-      @@instance = self
+      @@instance =  self
     end
   
     def self.instance

@@ -15,7 +15,15 @@ def sum_of_cubes(a, b)
 ###################  2.Given an Array, return the elements that are present exactly once in the array. You need to write a method called non_duplicated_values to accomplish this task. Example: Given [1,2,2,3,3,4,5], the method should return [1,4,5]
 
 def non_duplicated_values(arr)
-  arr.select { |value| arr.count(value) == 1 }
+  counts = Hash.new(0)
+  arr.each { |num| counts[num] += 1 }
+  non_duplicated = []
+  
+  counts.each do |num, count|
+    non_duplicated << num if count == 1
+  end
+  
+  non_duplicated
 end
 
 arr = [1, 2, 2, 3, 3, 4, 5, 6, 6]
