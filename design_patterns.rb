@@ -63,15 +63,13 @@ class Image
   end
   
  
-  image1 = ProxyImage.new("image1.jpg")
-  image2 = ProxyImage.new("image2.jpg")
+  image1 = ProxyImage.new("person1")
+  image2 = ProxyImage.new("person2")
   
   image1.display  
   image1.display  
   image2.display 
   
-
-
 # 3. Behavioral Design Pattern: Observer
 class Employee
     attr_reader :name, :title
